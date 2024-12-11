@@ -1,9 +1,9 @@
 package pages;
 
-import common.BasePage;
+import core.CorePage;
 import org.openqa.selenium.WebDriver;
 
-public class ContactUsPage extends BasePage {
+public class ContactUsPage extends CorePage {
 
     public ContactUsPage(WebDriver driver) {
         super(driver);

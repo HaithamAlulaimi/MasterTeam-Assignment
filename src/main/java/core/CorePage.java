@@ -1,4 +1,4 @@
-package common;
+package core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
  * Hello world!
  *
  */
-public class BasePage {
+public class CorePage {
     private final WebDriver driver;
 
-    public BasePage(WebDriver driver) {
+    public CorePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

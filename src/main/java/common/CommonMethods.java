@@ -1,9 +1,10 @@
 package common;
 
+import core.CorePage;
 import enums.ConfigKey;
 import org.openqa.selenium.WebDriver;
 
-public class CommonMethods extends BasePage {
+public class CommonMethods extends CorePage {
      WebDriver driver;
 
     public CommonMethods(WebDriver driver) {
