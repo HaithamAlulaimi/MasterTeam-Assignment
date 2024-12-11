@@ -1,4 +1,4 @@
-package core;
+package enums;
 
 public enum ConfigKey {
     BaseUrl("https://www.masterteam.sa/contact-us");

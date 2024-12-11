@@ -1,6 +1,7 @@
-package pages;
+package core;
 
 import core.BasePage;
+import enums.ConfigKey;
 import org.openqa.selenium.WebDriver;
 
 public class CommonMethods extends BasePage {
@@ -12,6 +13,6 @@ public class CommonMethods extends BasePage {
 
     public static void invokeBrowser(WebDriver driver) {
         driver.manage().window().maximize();
-//        driver.navigate().to(BASE_URL.getKey());
+        driver.navigate().to(ConfigKey.BaseUrl.getKey());
     }
 }
