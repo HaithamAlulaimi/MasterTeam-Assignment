@@ -41,12 +41,12 @@ public class Actions extends BasePage {
 
     public WebElement findElementClassName(String elementClassName) {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(elementClassName)));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(elementClassName)));
         } catch (Exception e) {
             e.printStackTrace();
             driver.close();
         }
-        return driver.findElement(By.id(elementClassName));
+        return driver.findElement(By.className(elementClassName));
     }
 
     public WebElement findElementByXpath(String elementXpath) {
@@ -58,7 +58,4 @@ public class Actions extends BasePage {
         }
         return driver.findElement(By.xpath(elementXpath));
     }
-
-
-
 }
