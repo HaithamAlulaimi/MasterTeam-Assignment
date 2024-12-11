@@ -3,17 +3,13 @@ package helper;
 import core.CorePage;
 import org.openqa.selenium.*;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.asserts.SoftAssert;
-
-import java.time.Duration;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeoutException;
 
 public class ActionsAssertion extends CorePage {
     WebDriver driver;
-    SoftAssert softAssert = new SoftAssert();
+    Logger logger = LoggerFactory.getLogger(WebDriverHelper.class);
 
     public ActionsAssertion(WebDriver driver) {
         super(driver);
@@ -21,18 +17,33 @@ public class ActionsAssertion extends CorePage {
     }
 
 
-    public void click(WebElement webElement) {
+    public void click(WebElement webElement,SoftAssert softAssert) {
 
-        softAssert.assertNotNull(webElement, "WebElement is null, cannot perform click.");
+        softAssert.assertNotNull(webElement, "WebElement is null, cannot perform click.\n");
 
         if (webElement != null) {
-            softAssert.assertTrue(webElement.isDisplayed(), "Element is not visible!");
-            softAssert.assertTrue(webElement.isEnabled(), "Element is not enabled!");
+            softAssert.assertTrue(webElement.isDisplayed(), "Element is not visible!\n");
+            softAssert.assertTrue(webElement.isEnabled(), "Element is not enabled!\n");
         }
 
         if (webElement != null && webElement.isDisplayed() && webElement.isEnabled()) {
             webElement.click();
-            System.out.println("Successfully clicked the element.");
+            logger.info("✔ Successfully clicked the element.\n");
         }
     }
+
+    public void sendKeys(WebElement webElement, String keysToSend, SoftAssert softAssert) {
+        softAssert.assertNotNull(webElement, "WebElement is null, cannot perform click.\n");
+
+        if (webElement != null) {
+            softAssert.assertTrue(webElement.isDisplayed(), "Element is not visible!\n");
+            softAssert.assertTrue(webElement.isEnabled(), "Element is not enabled!\n");
+        }
+
+        if (webElement != null && webElement.isDisplayed() && webElement.isEnabled()) {
+            webElement.sendKeys(keysToSend);
+            logger.info("✔ Successfully sent keys to element\n");
+        }
+    }
+
 }
