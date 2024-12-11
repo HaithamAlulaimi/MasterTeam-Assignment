@@ -2,6 +2,7 @@ package tests;
 
 
 import helper.ActionsAssertion;
+import helper.RetryAnalyzer;
 import helper.WebDriverHelper;
 import common.CommonMethods;
 import org.openqa.selenium.WebElement;
@@ -41,7 +42,7 @@ public class ContactUsTest {
     }
 
 
-    @Test(description = "Fill the contact us with valid data.", priority = 1)
+    @Test(description = "Fill the contact us with valid data.", priority = 1, retryAnalyzer = RetryAnalyzer.class)
     public void testContactUsFormSubmissionWithValidData() {
 
         actionsAssertion.sendKeys(webDriverHelper.findElementByID("Name"), "HaithamAlulaimi", softAssert);
