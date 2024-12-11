@@ -1,9 +1,5 @@
-package tests;
-
-
 import helper.ActionsAssertion;
 import helper.RetryAnalyzer;
-import helper.WebDriverHelper;
 import common.CommonMethods;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -16,7 +12,7 @@ import pages.ContactUsPage;
 public class ContactUsTest {
     WebDriver driver;
     ContactUsPage contactUsPage;
-    WebDriverHelper webDriverHelper;
+    RetryAnalyzer.WebDriverHelper webDriverHelper;
     SoftAssert softAssert;
     ActionsAssertion actionsAssertion;
 
@@ -29,7 +25,7 @@ public class ContactUsTest {
     @BeforeMethod
     public void beforeMethod() {
         driver = new ChromeDriver();
-        webDriverHelper = new WebDriverHelper(driver);
+        webDriverHelper = new RetryAnalyzer.WebDriverHelper(driver);
         actionsAssertion = new ActionsAssertion(driver);
         contactUsPage = new ContactUsPage(driver);
         softAssert = new SoftAssert();

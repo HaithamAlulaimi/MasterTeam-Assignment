@@ -9,7 +9,7 @@ import org.testng.asserts.SoftAssert;
 
 public class ActionsAssertion extends CorePage {
     WebDriver driver;
-    Logger logger = LoggerFactory.getLogger(WebDriverHelper.class);
+    Logger logger = LoggerFactory.getLogger(ActionsAssertion.class);
 
     public ActionsAssertion(WebDriver driver) {
         super(driver);
