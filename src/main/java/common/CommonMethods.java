@@ -1,6 +1,5 @@
-package core;
+package common;
 
-import core.BasePage;
 import enums.ConfigKey;
 import org.openqa.selenium.WebDriver;
 

@@ -1,6 +1,8 @@
-package core;
+package tests;
 
 
+import common.Actions;
+import common.CommonMethods;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import org.openqa.selenium.WebDriver;
